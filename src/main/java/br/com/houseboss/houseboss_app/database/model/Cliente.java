@@ -3,23 +3,28 @@ package br.com.houseboss.houseboss_app.database.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name = "produtos")
-@Getter
-@Setter
+@Table(name = "clientes")
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 @Builder
 @EqualsAndHashCode
-public class Produto {
+public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     @Column(nullable = false)
     private String nome;
-    @Column(nullable = false)
-    private BigDecimal preco;
+    private String numero;
+
+    @Column(name = "atendimentos_cliente")
+            @OneToMany(mappedBy = "cliente")
+     private List<Atendimento> atendimentosCliente = new ArrayList<>();
+
 }
