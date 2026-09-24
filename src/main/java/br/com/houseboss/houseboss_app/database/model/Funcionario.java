@@ -23,7 +23,7 @@ public class Funcionario {
     private String nome;
     @Column(nullable = false, unique = true)
     private String email;
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String senha;
 
     @OneToMany(mappedBy = "funcionario")
