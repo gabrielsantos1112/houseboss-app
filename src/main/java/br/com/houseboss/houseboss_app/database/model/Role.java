@@ -2,7 +2,6 @@ package br.com.houseboss.houseboss_app.database.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 @Entity
 @Table(name = "roles")
 @AllArgsConstructor
@@ -10,7 +9,6 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-@EqualsAndHashCode
 public class Role {
 
     @Id
